@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import Modal from './Modal';
-import '../css/index.css'
+import '../css/index.css';
 
 export default function ListaUsuarios() {
   const [usuario, setUsuario] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
-    axios
-      .get('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')
+    fetch('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')
+      .then((json) => json.json())
       .then((res) => {
-        console.log(res);
-        setUsuario(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
+        setUsuario(res);
       });
   }, []);
+
+  const close = () => {
+    setModalVisible(false);
+  };
 
   return usuario.map((cliente) => (
     <>
@@ -37,8 +37,8 @@ export default function ListaUsuarios() {
           <div className="botao">
             <button onClick={() => setModalVisible(true)}>Pagar</button>
             {isModalVisible ? (
-              <Modal>
-                <h2>Modal do App</h2>
+              <Modal closeBtn={() => close()}>
+                <></>
               </Modal>
             ) : null}
           </div>

@@ -1,0 +1,52 @@
+body {
+  padding: 0;
+  margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 375px;
+}
+.container-dados {
+  width: 100%;
+  padding: 20px 20px;
+  background: linear-gradient(
+    180deg,
+    RGBA(48, 50, 75, 1) 0%,
+    RGBA(38, 39, 57, 1) 100%
+  );
+  color: #fff;
+}
+.dados {
+  display: flex;
+  justify-content: space-around;
+  padding-right: 20px;
+  align-items: center;
+}
+.img {
+  display: flex;
+  border-radius: 65px;
+  margin: 0px;
+}
+.container_usuario_id {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  width: 70%;
+}
+.nome_usuario {
+}
+.id_user {
+  display: flex;
+  align-items: center;
+}
+.botao {
+  margin-right: 10px;
+}
+button {
+  width: 70px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+}
+button:hover {
+  background-color: #cfcfcf;
+}

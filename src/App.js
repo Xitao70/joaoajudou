@@ -1,9 +1,9 @@
-import ListaUsuarios from './components/ListaUsuaariosFetch'
 import './css/modal.css';
+import Lista from './components/exemplo/ListaUsuario';
 function App() {
   return (
     <>
-      <ListaUsuarios />
+      <Lista />
     </>
   );
 }

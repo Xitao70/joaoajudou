@@ -31,14 +31,16 @@ body {
   margin-left: 20px;
   width: 70%;
 }
-.nome_usuario {
-}
+
 .id_user {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 .botao {
-  margin-right: 10px;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 button {
   width: 70px;

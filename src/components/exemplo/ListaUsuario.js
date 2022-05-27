@@ -30,16 +30,13 @@ function Lista() {
               <div className="container_usuario_id">
                 <div className="nome_usuario">
                   <div className="name">Nome do usuário: {usuarios.name}</div>
-                <div className="id_user">
-                  <div className="id">ID: {usuarios.id}</div>
-                  <div className="usuario">Username: {usuarios.username}</div>
-                </div>
+                  <div className="id_user">
+                    <div className="id">ID: {usuarios.id}</div>
+                    <div className="usuario">Username: {usuarios.username}</div>
+                  </div>
                 </div>
               </div>
-                  <User
-                    usuarios={usuarios}
-                    setUsuarios={setUsuarioSelecionado}
-                  />
+              <User usuarios={usuarios} setUsuarios={setUsuarioSelecionado} />
               {usuarioSelecionado.name && (
                 <NewModal
                   usuarioSelecionado={usuarioSelecionado}

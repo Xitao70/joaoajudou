@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NewModal from './NewModal';
-import '../../css/listaUsuarios.css';
+import '../css/listaUsuarios.css';
 import User from './User';
 
 function Lista() {

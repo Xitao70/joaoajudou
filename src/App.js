@@ -1,5 +1,5 @@
 import './css/modal.css';
-import Lista from './components/exemplo/ListaUsuario';
+import Lista from './components/ListaUsuario';
 function App() {
   return (
     <>

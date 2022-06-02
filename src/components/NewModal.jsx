@@ -81,7 +81,9 @@ function NewModal(props) {
     console.log('CARDS ', cartoes[e.target.value]);
     setCartao(cartoes[e.target.value]);
   }
-
+  const sucessoModal = () =>{
+    setModal(false);
+  }
   const erroPagamento = () => {
     setModal(false);
   };
@@ -136,7 +138,7 @@ function NewModal(props) {
           </div>
         </div>
       )}
-      {modal && sucesso && <ModalSucesso />}
+      {modal && sucesso && <ModalSucesso closeModal ={sucessoModal}/> }
       {modal && !sucesso && <ModalError changeModal={erroPagamento} />}
     </>
   );

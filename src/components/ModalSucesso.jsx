@@ -1,6 +1,7 @@
 export default function ModalSucesso(props) {
   const FecharModal = () => {
-    window.location.reload();
+    // window.location.reload();
+    props.closeModal();
   };
 
   return (

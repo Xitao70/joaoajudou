@@ -1,3 +1,4 @@
+import '../css/modalError.css';
 export default function ModalError(props) {
   const FecharModal = () => {
     props.changeModal();
@@ -6,21 +7,21 @@ export default function ModalError(props) {
   return (
     <div className="modal-container">
       <div className="modal-sucesso">
-        <div className="modal-sucesso-titulo">
+        <div className="modal-error-titulo">
           <h2>Recibo de pagamento</h2>
         </div>
-        <div className="modal-sucesso-body">
+        <div className="modal-error-body">
           <p>
             O pagamento <strong>não</strong> foi concluído com sucesso.
           </p>
-        </div>
-        <div className="div-button-paid-sucess">
-          <button className="button-paid-error" onClick={FecharModal}>
+        <div className="paid-error">
+          <button className="button-paid-error" onClick={() => props.closeModal()}>
             Fechar
           </button>
           <button className="button-paid-error" onClick={props.changeModal}>
             Retornar
           </button>
+        </div>
         </div>
       </div>
     </div>

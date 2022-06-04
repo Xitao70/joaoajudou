@@ -6,14 +6,13 @@
 
 .modal {
   display: flex;
+  justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  padding: 2em;
-  min-width: 20em;
-  max-width: 70%;
-  color: #000;
-  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 1em;
   transform: translate(-50%, -50%);
   outline: transparent;
@@ -32,13 +31,6 @@
   outline: none;
   width: 32px;
   height: 32px;
-}
-
-.modal {
-  width: 50%;
-  height: 400px;
-  margin: 0;
-  padding: 0;
 }
 
 .modalContainer {

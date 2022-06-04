@@ -81,66 +81,69 @@ function NewModal(props) {
     console.log('CARDS ', cartoes[e.target.value]);
     setCartao(cartoes[e.target.value]);
   }
-  const sucessoModal = () =>{
+  const sucessoModal = () => {
     setModal(false);
-  }
+  };
   const erroPagamento = () => {
     setModal(false);
   };
 
   return (
-    <>
-      {!modal && (
-        <div className="matrix">
-          <div className="container">
-            <div className="headerModal">Pagamento para</div>
-            <div className="propsSelectedUser">
-              {props.usuarioSelecionado.name}
+    <div className="modal">
+      <div className="matrix">
+        {!modal && (
+          <div>
+            <div className="container">
+              <div className="headerModal"><h2>Pagamento para</h2></div>
+              <div className="propsSelectedUser"><h2>
+                {props.usuarioSelecionado.name}
+              </h2>
+              </div>
+              <button
+                className="X"
+                onClick={() => {
+                  props.setUsuarios({});
+                }}
+              >
+                X
+              </button>
             </div>
-            <button
-              className="X"
-              onClick={() => {
-                props.setUsuarios({});
-              }}
-            >
-              X
-            </button>
+            <div className="inputMoney">
+              <input
+                className="price"
+                type="text"
+                ref={(input) => (inputDoValor = input)}
+                value={money}
+                onChange={(e) => setMoney(maskMoney(e.target.value))}
+                maxLength={21}
+                placeholder="R$ 0,00"
+              />
+            </div>
+            <div className="selectedCard">
+              <select
+                className="cards"
+                ref={(select) => (selectCartao = select)}
+                onChange={manipularCartoes}
+              >
+                <option>Número do Cartão</option>
+                {cartoes.map((cartoes, index) => (
+                  <option value={index} key={index}>
+                    Cartão com o final {cartoes.cartao_numero.substr(-4)}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="paymentButton">
+              <button className="btn-pay" onClick={submeterPagamento}>
+                Pagar
+              </button>
+            </div>
           </div>
-          <div className="inputMoney">
-            <input
-              className="price"
-              type="text"
-              ref={(input) => (inputDoValor = input)}
-              value={money}
-              onChange={(e) => setMoney(maskMoney(e.target.value))}
-              maxLength={21}
-              placeholder="R$ 0,00"
-            />
-          </div>
-          <div className="selectedCard">
-            <select
-              className="cards"
-              ref={(select) => (selectCartao = select)}
-              onChange={manipularCartoes}
-            >
-              <option>Número do Cartão</option>
-              {cartoes.map((cartoes, index) => (
-                <option value={index} key={index}>
-                  Cartão com o final {cartoes.cartao_numero.substr(-4)}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="paymentButton">
-            <button className="btn-pay" onClick={submeterPagamento}>
-              Pagar
-            </button>
-          </div>
-        </div>
-      )}
-      {modal && sucesso && <ModalSucesso closeModal ={sucessoModal}/> }
-      {modal && !sucesso && <ModalError changeModal={erroPagamento} />}
-    </>
+        )}
+      {modal && sucesso && <ModalSucesso closeModal={ () =>  props.setUsuarios({})} />}
+      {modal && !sucesso && <ModalError changeModal={erroPagamento} closeModal={ () =>  props.setUsuarios({})} />}
+      </div>
+    </div>
   );
 }
 export default NewModal;

@@ -37,16 +37,17 @@ function Lista() {
                 </div>
               </div>
               <User usuarios={usuarios} setUsuarios={setUsuarioSelecionado} />
-              {usuarioSelecionado.name && (
+              
+            </div>
+          </div>
+        );
+      })}
+      {usuarioSelecionado.name && (
                 <NewModal
                   usuarioSelecionado={usuarioSelecionado}
                   setUsuarios={setUsuarioSelecionado}
                 />
               )}
-            </div>
-          </div>
-        );
-      })}
     </>
   );
 }

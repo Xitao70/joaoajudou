@@ -1,3 +1,4 @@
+import '../css/modalSucesso.css';
 export default function ModalSucesso(props) {
   const FecharModal = () => {
     // window.location.reload();
@@ -14,11 +15,14 @@ export default function ModalSucesso(props) {
           <p>O pagamento foi concluído com sucesso.</p>
           <br />
           <p>Obrigado!</p>
-        </div>
-        <div className="div-button-paid-sucess">
-          <button className="button-paid-sucess" onClick={FecharModal}>
-            Fechar
-          </button>
+          <div className="paid-sucess">
+            <button
+              className="button-paid-sucess"
+              onClick={() => props.closeModal()}
+            >
+              Fechar
+            </button>
+          </div>
         </div>
       </div>
     </div>

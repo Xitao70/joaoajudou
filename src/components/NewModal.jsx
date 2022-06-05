@@ -94,10 +94,11 @@ function NewModal(props) {
         {!modal && (
           <div>
             <div className="container">
-              <div className="headerModal"><h2>Pagamento para</h2></div>
-              <div className="propsSelectedUser"><h2>
-                {props.usuarioSelecionado.name}
-              </h2>
+              <div className="headerModal">
+                <h2>Pagamento para</h2>
+              </div>
+              <div className="propsSelectedUser">
+                <h2>{props.usuarioSelecionado.name}</h2>
               </div>
               <button
                 className="X"
@@ -140,8 +141,15 @@ function NewModal(props) {
             </div>
           </div>
         )}
-      {modal && sucesso && <ModalSucesso closeModal={ () =>  props.setUsuarios({})} />}
-      {modal && !sucesso && <ModalError changeModal={erroPagamento} closeModal={ () =>  props.setUsuarios({})} />}
+        {modal && sucesso && (
+          <ModalSucesso closeModal={() => props.setUsuarios({})} />
+        )}
+        {modal && !sucesso && (
+          <ModalError
+            changeModal={erroPagamento}
+            closeModal={() => props.setUsuarios({})}
+          />
+        )}
       </div>
     </div>
   );

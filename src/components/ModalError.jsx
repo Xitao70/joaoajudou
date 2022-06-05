@@ -12,7 +12,7 @@ export default function ModalError(props) {
         </div>
         <div className="modal-error-body">
           <p>
-            O pagamento <strong>não</strong> foi concluído com sucesso.
+            O pagamento <strong>NÃO</strong> foi concluído com sucesso.
           </p>
         <div className="paid-error">
           <button className="button-paid-error" onClick={() => props.closeModal()}>

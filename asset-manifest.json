@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/joaoajudou/static/css/main.baf5d378.css",
+    "main.js": "/joaoajudou/static/js/main.770bcc16.js",
+    "index.html": "/joaoajudou/index.html",
+    "main.baf5d378.css.map": "/joaoajudou/static/css/main.baf5d378.css.map",
+    "main.770bcc16.js.map": "/joaoajudou/static/js/main.770bcc16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.baf5d378.css",
+    "static/js/main.770bcc16.js"
+  ]
+}
